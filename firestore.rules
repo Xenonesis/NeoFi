@@ -1,0 +1,63 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // User profiles - users can only access their own profile
+    match /profiles/{userId} {
+      allow read, write, create, update, delete: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Transactions - users can only access their own transactions
+    match /transactions/{transactionId} {
+      allow read, write, update, delete: if request.auth != null && 
+        resource != null && resource.data.userId == request.auth.uid;
+      
+      allow create: if request.auth != null && 
+        request.resource.data.userId == request.auth.uid;
+    }
+
+    // Budgets - users can only access their own budgets
+    match /budgets/{budgetId} {
+      allow read, write, update, delete: if request.auth != null && 
+        resource != null && resource.data.userId == request.auth.uid;
+      
+      allow create: if request.auth != null && 
+        request.resource.data.userId == request.auth.uid;
+    }
+
+    // Categories - users can read all categories but only modify their own
+    match /categories/{categoryId} {
+      // Allow reading all categories (default and user-specific)
+      allow read: if request.auth != null;
+      
+      // Allow creating categories if user owns them or they're default (userId == null)
+      allow create: if request.auth != null && 
+        (request.resource.data.userId == request.auth.uid || 
+         request.resource.data.userId == null);
+      
+      // Allow updating/deleting only user's own categories or default categories
+      allow update, delete: if request.auth != null && 
+        (resource.data.userId == request.auth.uid || 
+         resource.data.userId == null);
+    }
+
+    // AI Conversations (future use)
+    match /ai_conversations/{conversationId} {
+      allow read, write, create, update, delete: if request.auth != null && 
+        (resource == null || resource.data.userId == request.auth.uid) &&
+        (request.resource == null || request.resource.data.userId == request.auth.uid);
+    }
+
+    // Recurring Transactions (future use)
+    match /recurring_transactions/{recurringId} {
+      allow read, write, create, update, delete: if request.auth != null && 
+        (resource == null || resource.data.userId == request.auth.uid) &&
+        (request.resource == null || request.resource.data.userId == request.auth.uid);
+    }
+
+    // Deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
