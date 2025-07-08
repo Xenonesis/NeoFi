@@ -9,230 +9,97 @@ A fully responsive budget tracking application built with Next.js, React, ShadCN
 - **Instagram:** [https://www.instagram.com/i__aditya7/](https://www.instagram.com/i__aditya7/)
 - **Portfolio:** [https://iaddy.netlify.app/](https://iaddy.netlify.app/)
 
-## Version 9.0.0 - Latest Updates
+## Version 0.30.0 - Alpha Release
 
-**Released: May 8, 2025**
+**Released: July 8, 2025**
 
-### New Features
-- **AI-Powered Financial Insights** with smart spending pattern detection and recommendations
-- **Completely Redesigned User Interface** with modern aesthetic and customizable dashboard layouts
-- **Enhanced Mobile Experience** optimized for one-handed use with native-feeling interactions
-- **Expanded International Support** with 25+ currencies and localization in 10 languages
-- **Personalized Financial Advisory** using machine learning algorithms
+### Version Timeline
+
+#### 0.30.0-alpha (July 8, 2025)
+- Initial alpha release
+- Core functionality implementation
+- **AI-Powered Financial Insights** with smart spending pattern detection
+- **Completely Redesigned User Interface** with modern aesthetic
+- **Enhanced Mobile Experience** with native-feeling interactions
 - **Natural Language Transaction Search** for intuitive data filtering
+
+#### 0.20.0-alpha (July 7, 2025)
+- Early alpha release
+- Basic features implementation
+- **Expanded International Support** with multiple currencies
+- **Personalized Financial Advisory** using machine learning
 - **Customizable Dashboard Widgets** with drag-and-drop functionality
 
-### Performance Improvements
-- 35% reduction in bundle size through improved code splitting
-- Server-side rendering optimizations for faster initial load times
-- Streaming server components implementation for improved UX
-- Enhanced caching strategies with Firebase integration
-- Advanced database indexing for query performance optimization
-- Optimized data loading for slower mobile connections
+#### 0.10.0-alpha (July 5, 2025)
+- Initial project setup and foundation
+- Basic transaction tracking and management
+- Simple dashboard with essential financial overview
+- Initial mobile-responsive design implementation
 
-### User Experience Enhancements
-- Complete UI overhaul with modern, cleaner aesthetic
-- Customizable color themes with adaptive schemes
-- Streamlined navigation with improved information architecture
-- Animated transitions between views and data visualizations
-- Offline transaction recording with background synchronization
-- Improved touch targets and gesture controls for mobile
+## Features
 
-### Technical Improvements
-- **Enhanced Security** with passwordless authentication and two-factor support
-- **Testing Infrastructure** with automated end-to-end and component testing
-- **Accessibility Enhancements** achieving WCAG 2.1 AA compliance
-- Comprehensive security audit and vulnerability patching
-- Multi-timezone support for global teams
-- Region-specific tax and financial regulation awareness
+### Core Functionality
+- AI-Powered Financial Insights with smart spending pattern detection
+- Completely Redesigned User Interface with modern aesthetic
+- Enhanced Mobile Experience with native-feeling interactions
+- Natural Language Transaction Search for intuitive data filtering
+- Expanded International Support with multiple currencies
+- Personalized Financial Advisory using machine learning
+- Customizable Dashboard Widgets with drag-and-drop functionality
 
-## Version 8.9.0 - Previous Updates
-
-**Released: July 15, 2023**
-
-### New Features
-- GitHub integration with improved version control system
-- Enhanced transaction filtering with advanced search capabilities
-- Multi-currency support for international users
-- Dark mode optimization with improved contrast ratios
-- Performance metrics dashboard for system administrators
-- New data visualization components with improved accessibility
-
-### Performance Improvements
-- Application loading speed with optimized asset delivery
-- Mobile responsiveness with better touch controls for charts
-- Database query performance with optimized indexes
-- Memory usage optimization for better performance on low-end devices
-- React component architecture with better code splitting
-
-### User Experience Enhancements
-- Improved error handling with detailed user feedback
-- Enhanced security with additional input validation
-- Accessibility improvements with ARIA compliance and keyboard navigation
-- Fixed currency formatting inconsistencies across different locales
-- Resolved chart rendering issues on specific mobile devices
-- Fixed date format handling for international users
-
-### Technical Improvements
-- Authentication token refresh mechanism
-- Database connection pooling for better stability
-- Cache invalidation issues causing stale data display
-- Added GitHub repository integration at https://github.com/Xenonesis/NeoFi.git
-
-## Version 8.8.0 - Previous Updates
-
-**Released: June 30, 2023**
-
-### Brand Identity Improvements
-- Enhanced brand identity with improved logo and text styling
-- Added subtle animation effects to brand elements with better transitions
+### Performance
+- Optimized for fast loading and smooth interactions
+- Efficient data handling and state management
+- Responsive design for all device sizes
 - Improved brand visibility and contrast across all themes
 - Implemented interactive hover animations for enhanced user experience
 - Added custom gradient effects for brand text with optimized performance
 
-### Technical Improvements
-- Added custom shadow effects for better depth perception
-- Optimized animations for reduced motion preferences
-- Enhanced text gradient with improved color transitions
-- Added subtle glow effects to logo and text components
-- Fixed text visibility issues on dark backgrounds
-- Updated About page to include comprehensive version history
+## Getting Started
 
-### User Experience Enhancements
-- Improved visual hierarchy with layered elements
-- Created more cohesive brand appearance across the application
-- Enhanced micro-interactions for better feedback
-- Optimized contrast for better readability in all lighting conditions
-- Ensured accessibility with proper color contrast and motion controls
+### Prerequisites
+- Node.js 18+ and npm 9+
+- Firebase account for authentication and database
+- Git for version control
 
-## Version 8.7.0 - Previous Updates
+### Installation
 
-**Released: June 15, 2023**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Xenonesis/NeoFi.git
+   cd NeoFi
+   ```
 
-### New Features
-- Redesigned About page with enhanced UI/UX
-- Added FAQs section for common user questions
-- Updated developer profile with current information
-- Improved mobile responsiveness and animations
-- Added interactive elements for better user engagement
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### Technical Improvements
-- Improved compatibility with modern browsers
-- Enhanced performance with latest React features
-- Replaced internal SVG with native SVG avatar
-- Added gradient touches and glow effects
-- Fixed SVG image rendering issues
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory and add your Firebase configuration:
+   ```
+   NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-bucket.appspot.com
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+   NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+   ```
 
-## Version 8.6.0 - Previous Updates
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-**Released: May 30, 2023**
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Brand Updates
-- Initial brand identity implementation
-- Created brand color scheme and typography system
-- Established consistency in UI elements
-- Designed original logo and brand components
-- Implemented basic animations for UI feedback
-- Added support for light and dark themes
+## Contributing
 
-## Version 8.5.0 - Previous Updates
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-**Released: May 15, 2023**
+## License
 
-### UI Improvements
-- Introduced gradient backgrounds across UI
-- Improved accessibility with better contrast
-- Added responsive layout optimizations
-- Implemented motion effects for interactive elements
-- Enhanced shadow effects for depth perception
-- Added reduced motion support for accessibility
-
-## Version 8.4.0 - Previous Updates
-
-**Released: April 28, 2023**
-
-### Brand Foundation
-- Implemented basic Logo component structure
-- Added fallback behavior for logo loading
-- Created responsive sizing system for brand elements
-- Established brand-text class for consistent styling
-- Added browser compatibility fixes
-- Optimized SVG assets for performance
-
-## Version 7.8 - Latest Updates
-
-**Released: May 1, 2024**
-
-### New Features
-- GitHub integration for better collaboration and version control
-- Enhanced repository management with main branch as v7.8
-- Improved documentation with updated README
-- Streamlined deployment workflow
-
-### Technical Improvements
-- Updated repository URL to GitHub
-- Enhanced version tracking and release management
-- Improved code documentation and organization
-- Streamlined configuration management
-
-## Version 7.7 - Previous Updates
-
-**Released: April 13, 2024**
-
-### Bug Fixes
-- Fixed Firebase connection issues with proper environment variable handling
-- Improved database connection reliability for better user experience
-- Enhanced error handling for database operations
-- Fixed deployment issues with environment configuration
-
-### Technical Improvements
-- Updated environment variable management system
-- Improved documentation for setup and deployment
-- Enhanced error handling and user feedback during connection issues
-- Added better error recovery mechanisms for database failures
-
-## Version 7.4 - Previous Updates
-
-**Released: April 9, 2024**
-
-### Bug Fixes
-- Fixed currency display issues in Analytics Dashboard to correctly respect user preferences
-- Enhanced currency formatting to maintain consistency across all application pages
-- Improved real-time updates of currency displays when preferences change
-- Fixed chart tooltips to display correct currency symbols based on user settings
-
-### Technical Improvements
-- Implemented robust currency preference handling throughout the application
-- Added dynamic currency updates via localStorage for consistency
-- Enhanced Currency component usage across analytics visualizations
-- Added fallback mechanisms for server-side rendering of currency values
-
-## Version 7.3 - Previous Updates
-
-**Released: April 8, 2024**
-
-### Bug Fixes
-- Fixed build failure caused by `getRandomColor` import error in the analytics page
-- Resolved circular dependency by creating a dedicated color utilities file
-- Fixed module path resolution issues with proper file organization
-- Improved code organization for better maintainability
-
-### Technical Improvements
-- Separated color utility functions into dedicated module
-- Enhanced module structure to prevent circular dependencies
-- Improved type checking and error handling in chart visualization
-- Optimized color generation for consistent category visualization
-
-## Version 7.2 - Previous Updates
-
-**Released: April 5, 2024**
-
-### Bug Fixes
-- Fixed dark mode text visibility issues in Financial Snapshot and Income vs Expense Trend charts
-- Resolved compatibility issues with Next.js and React versions
-- Fixed calculation issues in savings rate display
-- Added safety checks for NaN and undefined values in currency formatting
-- Improved calculation accuracy in monthly data processing
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ### User Experience Improvements
 - Enhanced chart readability in dark mode with proper text contrast
@@ -240,123 +107,6 @@ A fully responsive budget tracking application built with Next.js, React, ShadCN
 - Improved handling of empty transaction data
 - Better type checking in chart components
 - Optimized monthly data processing for more accurate financial trends
-
-## Version 7.1 - Previous Updates
-
-**Released: April 3, 2024**
-
-### Bug Fixes
-- Fixed type error in settings page involving missing fields in profile updates
-- Resolved build failure caused by incorrect argument types
-- Ensured proper timezone and gender field handling
-
-### User Experience Improvements
-- Enhanced form data consistency in the settings page
-- Improved error handling and logging throughout the application
-- Added better type checking for data interfaces
-
-## Version 7.0 - Latest Updates
-
-**Released: April 2, 2024**
-
-### New Features
-- Enhanced category management with improved deletion functionality
-- Optimized radial charts for better display on both mobile and desktop
-- Added dynamic screen size detection for responsive chart layouts
-- Implemented colorful gradients in charts based on budget usage
-- Added category deletion capability with prominent DELETE buttons
-
-### User Experience Improvements
-- Completely redesigned category deletion UI with clear instructions
-- Improved visualization of custom categories section with prominent styling
-- Fixed date handling to ensure proper date format for database constraints
-- Enhanced error messages with detailed information for better troubleshooting
-- Added more visual cues and instructions for managing categories
-
-### Technical Improvements
-- Fixed transaction submission issues with improved date validation
-- Enhanced error handling with detailed console logging
-- Improved data validation before submission to database
-- Fixed constraint violations with proper data formatting
-- Added robust error recovery mechanisms
-
-## Version 6.0 - Latest Updates
-
-**Released: March 31, 2024**
-
-### New Features
-- Enhanced budget visualization with multiple chart types (bar, pie, radial)
-- Added interactive chart type selectors for better data exploration
-- Implemented detailed tooltips for all charts with contextual information
-- Added percentage indicators directly on charts for quick insights
-- Improved Expense Categories visualization with donut charts and shadow effects
-- Added gender selection option in user profile settings
-- Added timezone selection for better personalization of reports and notifications
-
-### User Experience Improvements
-- Redesigned BudgetCharts component with better UI/UX
-- Enhanced Income vs. Expenses charts with area, bar, and line chart combinations
-- Added gradient fills and modern design elements to all visualizations
-- Improved empty states with helpful messages
-- Better color contrast and accessibility for data visualization
-- Improved budget creation with multiple access points on mobile
-- Enhanced button sizes for better touch interactions
-
-### Technical Improvements
-- Optimized chart rendering with useMemo hooks
-- Improved data processing for more accurate visualization
-- Enhanced responsive design for all chart components
-- Better color palette implementation with consistent styling
-- Added custom filter components for shadow effects
-
-## Version 5.0
-
-**Released: March 30, 2024**
-
-### New Features
-- Added notification preferences for budget alerts and transaction confirmations
-- Implemented timezone selection in user profile settings
-- Enhanced transaction categories with custom user-defined categories
-- Added phone number verification for account security
-- Improved recurring transactions with customizable schedules and more options
-
-### User Experience Improvements
-- Redesigned dashboard with more intuitive navigation
-- Optimized mobile experience with better touch controls
-- Added keyboard shortcuts for common actions
-- Improved accessibility throughout the application
-- Enhanced error handling with more informative messages
-
-### Technical Improvements
-- Updated Next.js to version 14.2.26
-- Improved database performance with optimized queries
-- Enhanced security with additional validation checks
-- Reduced bundle size for faster loading times
-- Added comprehensive error logging
-
-## Version 4.0
-
-**Released: March 30, 2025**
-
-### New Features
-- Enhanced transaction filtering and sorting capabilities
-- Added PDF, CSV, and Excel export functionality for transactions
-- Implemented scheduled exports with multiple frequency options
-- Improved transaction form with autosave and suggestions
-- **Added theme toggle functionality for easy switching between light, dark, and system themes**
-
-### User Experience Improvements
-- Fixed dropdown duplication issues in custom category forms
-- Added virtual scrolling for better performance with large transaction lists
-- Improved timezone handling across all date operations
-- Enhanced mobile responsiveness throughout the application
-- **Added accessible theme toggles to all key pages (landing, dashboard, profile)**
-
-### Bug Fixes
-- Resolved transaction creation failures with reliable insertion function
-- Fixed currency display issues in dark mode
-- Corrected recurring transaction generation logic
-- Improved state management with better error handling
 
 ## Important: Environment Setup Required
 

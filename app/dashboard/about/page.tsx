@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
 import { TechLogo } from "@/components/ui/tech-logo";
+import { getAppVersion } from "@/lib/utils";
 import { 
   BarChart4, 
   BookOpen, 
@@ -285,8 +286,8 @@ export default function AboutPage() {
                     <Logo size="lg" withText animated={false} className="relative z-10" />
                   </div>
                   <div className="flex items-center gap-2 ml-2">
-                    <p className="text-sm text-muted-foreground">Version 9.0.0</p>
-                    <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 shadow-sm">Latest</Badge>
+                    <p className="text-sm text-muted-foreground">Version {getAppVersion()}</p>
+                    <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 shadow-sm">Alpha</Badge>
                   </div>
                 </div>
                 <Button
@@ -307,29 +308,25 @@ export default function AboutPage() {
                   <div className="space-y-4">
                     <h3 className="text-sm font-medium flex items-center gap-2 text-primary">
                       <GitBranch className="w-4 h-4" />
-                      Version 9.0.0 key update:
+                      Version 0.30.0-alpha key update:
                     </h3>
-                    <p className="text-xs text-muted-foreground mb-2">Released on May 8, 2025</p>
+                    <p className="text-xs text-muted-foreground mb-2">Released on July 8, 2025</p>
                     <ul className="space-y-2.5 text-sm">
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">AI-powered financial insights with personalized recommendations</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">AI-Powered Financial Insights with smart spending pattern detection</span>
                       </li>
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">Completely redesigned user interface with modern aesthetic</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">Completely Redesigned User Interface with modern aesthetic</span>
                       </li>
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">Enhanced mobile experience with offline capabilities</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">Enhanced Mobile Experience with native-feeling interactions</span>
                       </li>
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">Expanded support for 25+ international currencies</span>
-                      </li>
-                      <li className="flex items-start gap-2 group">
-                        <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">Customizable dashboard with drag-and-drop widgets</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">Natural Language Transaction Search for intuitive data filtering</span>
                       </li>
                     </ul>
                   </div>
@@ -342,179 +339,168 @@ export default function AboutPage() {
                     <ul className="space-y-2.5 text-sm">
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">35% reduction in bundle size with improved code splitting</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">Modern React architecture with Next.js 14</span>
                       </li>
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">Enhanced security with two-factor authentication</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">TypeScript for type safety and better developer experience</span>
                       </li>
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">Automated end-to-end testing with Playwright</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">Optimized for performance with code splitting and lazy loading</span>
                       </li>
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">WCAG 2.1 AA compliance for better accessibility</span>
-                      </li>
-                      <li className="flex items-start gap-2 group">
-                        <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">Streaming server components for improved UX</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">Responsive design that works on all devices</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
               
-              <div className="space-y-6">
-                <h3 className="text-sm font-medium flex items-center gap-2 text-primary">
-                  <Calendar className="w-4 h-4" />
-                  Version Timeline:
-                </h3>
+              <div className="relative pt-2">
+                {/* Timeline line */}
+                <div className="absolute left-[15px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/80 to-primary/10 rounded-full"></div>
                 
-                <div className="relative pt-2">
-                  {/* Timeline line */}
-                  <div className="absolute left-[15px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/80 to-primary/10 rounded-full"></div>
-                  
-                  {/* Version 8.9.0 */}
-                  <div className="relative pl-10 pb-8">
-                    <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-primary to-violet-500/80 flex items-center justify-center shadow-lg shadow-primary/20 z-10">
-                      <span className="text-xs font-semibold text-white">8.9</span>
+                {/* Version 0.30.0-alpha */}
+                <div className="relative pl-10 pb-8">
+                  <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-primary to-violet-500/80 flex items-center justify-center shadow-lg shadow-primary/20 z-10">
+                    <span className="text-xs font-semibold text-white">0.30</span>
+                  </div>
+                  <div className="absolute left-[15px] top-[30px] bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-primary/30 to-transparent"></div>
+                  <div className="bg-card rounded-lg border border-primary/10 shadow-md overflow-hidden">
+                    <div className="bg-gradient-to-r from-primary/5 to-violet-500/5 px-4 py-2.5 border-b border-primary/10 flex justify-between items-center">
+                      <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 shadow-sm">v0.30.0-alpha</Badge>
+                      <span className="text-xs text-muted-foreground">Released on July 8, 2025</span>
                     </div>
-                    <div className="absolute left-[15px] top-[30px] bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-primary/30 to-transparent"></div>
-                    <div className="bg-card rounded-lg border border-primary/10 shadow-md overflow-hidden">
-                      <div className="bg-gradient-to-r from-primary/5 to-violet-500/5 px-4 py-2.5 border-b border-primary/10 flex justify-between items-center">
-                        <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 shadow-sm">v8.9.0</Badge>
-                        <span className="text-xs text-muted-foreground">Released on May 7, 2025</span>
-                      </div>
-                      <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                        <ul className="space-y-1.5">
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>GitHub integration with improved version control</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Enhanced transaction filtering capabilities</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Multi-currency support for international users</span>
-                          </li>
-                        </ul>
-                        <ul className="space-y-1.5">
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Optimized dark mode with improved contrast</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Performance metrics dashboard for admins</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>New accessible data visualization components</span>
-                          </li>
-                        </ul>
-                      </div>
+                    <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>AI-Powered Financial Insights with smart spending pattern detection</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Completely Redesigned User Interface with modern aesthetic</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Enhanced Mobile Experience with native-feeling interactions</span>
+                        </li>
+                      </ul>
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Natural Language Transaction Search for intuitive data filtering</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Expanded International Support with multiple currencies</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Personalized Financial Advisory using machine learning</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                  
-                  {/* Version 8.8.0 */}
-                  <div className="relative pl-10 pb-8">
-                    <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-primary/90 to-violet-500/70 flex items-center justify-center shadow-md shadow-primary/10 z-10">
-                      <span className="text-xs font-semibold text-white">8.8</span>
+                </div>
+                
+                {/* Version 0.20.0-alpha */}
+                <div className="relative pl-10 pb-8">
+                  <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-primary/90 to-violet-500/70 flex items-center justify-center shadow-md shadow-primary/10 z-10">
+                    <span className="text-xs font-semibold text-white">0.20</span>
+                  </div>
+                  <div className="absolute left-[15px] top-[30px] bottom-0 w-0.5 bg-gradient-to-b from-primary/40 via-primary/20 to-transparent"></div>
+                  <div className="bg-card rounded-lg border border-primary/10 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div className="bg-gradient-to-r from-primary/5 to-violet-500/5 px-4 py-2.5 border-b border-primary/10 flex justify-between items-center">
+                      <Badge variant="outline" className="bg-muted text-muted-foreground border-muted">v0.20.0-alpha</Badge>
+                      <span className="text-xs text-muted-foreground">Released on July 7, 2025</span>
                     </div>
-                    <div className="absolute left-[15px] top-[30px] bottom-0 w-0.5 bg-gradient-to-b from-primary/40 via-primary/20 to-transparent"></div>
-                    <div className="bg-card rounded-lg border border-primary/10 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-                      <div className="bg-gradient-to-r from-primary/5 to-violet-500/5 px-4 py-2.5 border-b border-primary/10 flex justify-between items-center">
-                        <Badge variant="outline" className="bg-muted text-muted-foreground border-muted">v8.8.0</Badge>
-                        <span className="text-xs text-muted-foreground">Released on May 7, 2025</span>
-                      </div>
-                      <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                        <ul className="space-y-1.5">
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Enhanced brand identity with improved logo styling</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Added subtle animation effects to brand elements</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Improved brand visibility across themes</span>
-                          </li>
-                        </ul>
-                        <ul className="space-y-1.5">
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Added custom shadow effects for better depth</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Enhanced text gradient with improved transitions</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Fixed text visibility on dark backgrounds</span>
-                          </li>
-                        </ul>
-                      </div>
+                    <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Early alpha release with basic features implementation</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Expanded International Support with multiple currencies</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Personalized Financial Advisory using machine learning</span>
+                        </li>
+                      </ul>
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Customizable Dashboard Widgets with drag-and-drop functionality</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Improved transaction categorization</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Enhanced data visualization components</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                  
-                  {/* Version 8.7.0 */}
-                  <div className="relative pl-10 pb-8">
-                    <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-primary/80 to-violet-500/60 flex items-center justify-center shadow-md shadow-primary/10 z-10">
-                      <span className="text-xs font-semibold text-white">8.7</span>
+                </div>
+                
+                {/* Version 0.10.0-alpha */}
+                <div className="relative pl-10 pb-8">
+                  <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-primary/80 to-violet-500/60 flex items-center justify-center shadow-md shadow-primary/10 z-10">
+                    <span className="text-xs font-semibold text-white">0.10</span>
+                  </div>
+                  <div className="absolute left-[15px] top-[30px] bottom-0 w-0.5 bg-gradient-to-b from-primary/30 via-primary/15 to-transparent"></div>
+                  <div className="bg-card rounded-lg border border-primary/10 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                    <div className="bg-gradient-to-r from-primary/5 to-violet-500/5 px-4 py-2.5 border-b border-primary/10 flex justify-between items-center">
+                      <Badge variant="outline" className="bg-muted text-muted-foreground border-muted">v0.10.0-alpha</Badge>
+                      <span className="text-xs text-muted-foreground">Released on July 5, 2025</span>
                     </div>
-                    <div className="absolute left-[15px] top-[30px] bottom-0 w-0.5 bg-gradient-to-b from-primary/30 via-primary/15 to-transparent"></div>
-                    <div className="bg-card rounded-lg border border-primary/10 shadow-sm overflow-hidden hover:shadow-md transition-shadow">
-                      <div className="bg-gradient-to-r from-primary/5 to-violet-500/5 px-4 py-2.5 border-b border-primary/10 flex justify-between items-center">
-                        <Badge variant="outline" className="bg-muted text-muted-foreground border-muted">v8.7.0</Badge>
-                        <span className="text-xs text-muted-foreground">Released on May 7, 2025</span>
-                      </div>
-                      <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                        <ul className="space-y-1.5">
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Redesigned About page with enhanced UI/UX</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Added FAQs section for common user questions</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Updated developer profile with current information</span>
-                          </li>
-                        </ul>
-                        <ul className="space-y-1.5">
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Improved mobile responsiveness and animations</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Fixed SVG image rendering issues</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <span className="text-primary">•</span>
-                            <span>Enhanced performance with latest React features</span>
-                          </li>
-                        </ul>
-                      </div>
+                    <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Initial project setup and foundation</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Basic transaction tracking and management</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Simple dashboard with essential financial overview</span>
+                        </li>
+                      </ul>
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Initial mobile-responsive design implementation</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Basic authentication and user profiles</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Core infrastructure and architecture</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                  
-                  {/* Earlier Versions Button */}
-                  <div className="relative pl-10">
-                    <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-primary/50 to-violet-500/30 flex items-center justify-center shadow shadow-primary/5 z-10">
-                      <History className="w-4 h-4 text-white/80" />
-                    </div>
-                    <Button variant="outline" className="w-full justify-center text-xs border-dashed">
-                      Show Earlier Versions
-                    </Button>
+                </div>
+                
+                {/* No earlier versions to show */}
+                <div className="relative pl-10">
+                  <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-primary/50 to-violet-500/30 flex items-center justify-center shadow shadow-primary/5 z-10">
+                    <History className="w-4 h-4 text-white/80" />
+                  </div>
+                  <div className="w-full text-center text-xs text-muted-foreground py-2 px-4 rounded-md border border-dashed border-primary/20">
+                    No earlier versions available
                   </div>
                 </div>
               </div>

@@ -371,9 +371,19 @@ export function getRandomColor(text: string): string {
 }
 
 /**
- * Get the current application version
+ * Get the current application version and version history
  * @returns The current app version as a string
  */
 export function getAppVersion(): string {
-  return process.env.NEXT_PUBLIC_APP_VERSION || '8.0.0';
+  // Current version
+  const currentVersion = '0.30.0-alpha';
+  
+  // Version history
+  const versionHistory = [
+    { version: '0.10.0-alpha', releaseDate: '2025-07-05' },
+    { version: '0.20.0-alpha', releaseDate: '2025-07-07' },
+    { version: '0.30.0-alpha', releaseDate: '2025-07-08' }
+  ];
+  
+  return process.env.NEXT_PUBLIC_APP_VERSION || currentVersion;
 } 

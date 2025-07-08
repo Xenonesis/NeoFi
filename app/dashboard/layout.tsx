@@ -526,7 +526,7 @@ export default function DashboardLayout({
 
           <div className="pt-4 mt-auto">
             <div className="px-3 py-3 bg-primary/5 rounded-lg text-center">
-              <span className="text-xs text-muted-foreground">Budget Buddy v{appVersion}</span>
+              <span className="text-xs text-muted-foreground">NeoFi v{appVersion}</span>
             </div>
           </div>
         </div>
