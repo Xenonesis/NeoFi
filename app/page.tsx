@@ -2118,6 +2118,7 @@ export default function Home() {
                     height={144}
                     className="object-cover"
                     priority
+                    unoptimized={true}
                   />
                 </motion.div>
 

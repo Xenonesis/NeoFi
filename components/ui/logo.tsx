@@ -173,7 +173,8 @@ export function Logo({
         width={getImageDimension(sizeMap[size].logo)} 
         height={getImageDimension(sizeMap[size].logo)} 
         className={`${sizeMap[size].logo} transition-all duration-300`}
-        priority={size === 'lg' || size === 'xl' || size === '2xl'} 
+        priority={size === 'lg' || size === 'xl' || size === '2xl'}
+        unoptimized={true}
         onError={(e) => {
           // Fallback to a colored div if image fails to load
           const target = e.target as HTMLImageElement;
@@ -182,7 +183,7 @@ export function Logo({
           if (parent) {
             const fallback = document.createElement('div');
             fallback.className = `${sizeMap[size].logo} bg-primary/80 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300`;
-            fallback.innerText = 'BB';
+            fallback.innerText = 'N';
             parent.appendChild(fallback);
           }
         }}

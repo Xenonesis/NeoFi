@@ -40,8 +40,8 @@ const nextConfig = {
       },
     ],
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    unoptimized: process.env.NODE_ENV === 'production',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    unoptimized: false,
   },
 
   // Compiler optimizations

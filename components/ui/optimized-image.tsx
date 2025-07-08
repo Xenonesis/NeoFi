@@ -96,6 +96,7 @@ export function OptimizedImage({
               height={height}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${loading ? 'opacity-100' : 'opacity-0'}`}
               style={{ filter: 'blur(10px)' }}
+              unoptimized={lowQualitySrc.endsWith('.svg')}
               {...props}
             />
           )}
@@ -106,6 +107,7 @@ export function OptimizedImage({
             width={width}
             height={height}
             className={`w-full h-full object-cover transition-opacity duration-300 ${loading ? 'opacity-0' : 'opacity-100'}`}
+            unoptimized={src.endsWith('.svg') || (fallbackSrc && fallbackSrc.endsWith('.svg'))}
             onLoad={() => setLoading(false)}
             onError={() => {
               setError(true);

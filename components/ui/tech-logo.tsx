@@ -35,6 +35,7 @@ export function TechLogo({ name, logo, size = 40, className }: TechLogoProps) {
           width={size} 
           height={size}
           className={`object-contain ${className}`}
+          unoptimized={true}
         />
       );
     }
@@ -57,6 +58,7 @@ export function TechLogo({ name, logo, size = 40, className }: TechLogoProps) {
       width={size} 
       height={size}
       className={`object-contain ${className}`}
+      unoptimized={logo.endsWith('.svg') || logo.startsWith('data:')}
       onError={() => setError(true)}
     />
   );
