@@ -223,8 +223,19 @@ This application can be deployed to Vercel:
 
 1. Push your code to GitHub
 2. Import the project to Vercel
-3. Add environment variables
+3. Add environment variables in the Vercel dashboard:
+   ```
+   NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyB3KTh7DiKvw3Mrwr6VtGutnqfIOeNpEdA
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=neofi-5e481.firebaseapp.com
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=neofi-5e481
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=neofi-5e481.firebasestorage.app
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=257578214193
+   NEXT_PUBLIC_FIREBASE_APP_ID=1:257578214193:web:6ef9cc2808e134715e8610
+   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-NJGRQPLZ7J
+   ```
 4. Deploy
+
+For detailed deployment instructions, see [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)
 
 ## License
 

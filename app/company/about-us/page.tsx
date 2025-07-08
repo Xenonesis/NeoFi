@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
+// Use static generation for this page
+export const dynamic = 'force-static';
+export const revalidate = 3600; // Revalidate every hour
+
 export default function AboutUsPage() {
   return (
     <main className="flex min-h-screen flex-col bg-background">

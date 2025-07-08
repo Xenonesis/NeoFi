@@ -1,5 +1,5 @@
 {
-  "buildCommand": "next build",
+  "buildCommand": "npm run vercel-build",
   "framework": "nextjs",
   "outputDirectory": ".next",
   "env": {

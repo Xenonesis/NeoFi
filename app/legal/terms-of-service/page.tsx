@@ -20,12 +20,12 @@ export default function TermsOfServicePage() {
           
           <h2 className="text-xl font-semibold mt-8 mb-4">1. Agreement to Terms</h2>
           <p>
-            By accessing or using Budget Buddy, you agree to be bound by these Terms of Service. If you do not agree to these terms, you may not access or use our services.
+            By accessing or using NeoFi, you agree to be bound by these Terms of Service. If you do not agree to these terms, you may not access or use our services.
           </p>
           
           <h2 className="text-xl font-semibold mt-8 mb-4">2. Description of Service</h2>
           <p>
-            Budget Buddy provides financial management tools to help users track expenses, create budgets, and gain insights into their spending habits. We may update, modify, or enhance the service at any time.
+            NeoFi provides financial management tools to help users track expenses, create budgets, and gain insights into their spending habits. We may update, modify, or enhance the service at any time.
           </p>
           
           <h2 className="text-xl font-semibold mt-8 mb-4">3. User Accounts</h2>
@@ -54,7 +54,7 @@ export default function TermsOfServicePage() {
           
           <h2 className="text-xl font-semibold mt-8 mb-4">5. Intellectual Property</h2>
           <p>
-            All content, features, and functionality of our service, including but not limited to text, graphics, logos, icons, and software, are owned by Budget Buddy or its licensors and are protected by copyright, trademark, and other intellectual property laws.
+            All content, features, and functionality of our service, including but not limited to text, graphics, logos, icons, and software, are owned by NeoFi or its licensors and are protected by copyright, trademark, and other intellectual property laws.
           </p>
           
           <h2 className="text-xl font-semibold mt-8 mb-4">6. Third-Party Links and Services</h2>
@@ -69,7 +69,7 @@ export default function TermsOfServicePage() {
           
           <h2 className="text-xl font-semibold mt-8 mb-4">8. Limitation of Liability</h2>
           <p>
-            TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL BUDGET BUDDY BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, ARISING OUT OF OR RELATING TO YOUR USE OF, OR INABILITY TO USE, THE SERVICE.
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL NEOFI BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, ARISING OUT OF OR RELATING TO YOUR USE OF, OR INABILITY TO USE, THE SERVICE.
           </p>
           
           <h2 className="text-xl font-semibold mt-8 mb-4">9. Termination</h2>
