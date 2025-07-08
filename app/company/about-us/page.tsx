@@ -14,7 +14,7 @@ export default function AboutUsPage() {
         </Link>
         
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">About Budget Buddy</h1>
+          <h1 className="text-4xl font-bold mb-4">About NeoFi</h1>
           <p className="text-xl text-muted-foreground">
             Our mission is to empower individuals to take control of their finances through intuitive tools and actionable insights.
           </p>
@@ -25,10 +25,10 @@ export default function AboutUsPage() {
             <h2 className="text-3xl font-semibold mb-6">Our Story</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Budget Buddy was born from a simple observation: managing personal finances shouldn't be complicated. Founded by Aditya Kumar Tiwari in 2024, our platform emerged from the belief that everyone deserves access to powerful yet simple financial tools.
+                NeoFi was born from a simple observation: managing personal finances shouldn't be complicated. Founded by Aditya Kumar Tiwari in 2024, our platform emerged from the belief that everyone deserves access to powerful yet simple financial tools.
               </p>
               <p>
-                What started as a personal project to solve his own budgeting challenges quickly evolved into a comprehensive platform serving thousands of users worldwide. Today, Budget Buddy continues to grow with a focus on intuitive design, powerful analytics, and world-class security.
+                What started as a personal project to solve his own budgeting challenges quickly evolved into a comprehensive platform serving thousands of users worldwide. Today, NeoFi continues to grow with a focus on intuitive design, powerful analytics, and world-class security.
               </p>
               <p>
                 Our vision is to create a world where financial stress is eliminated through better planning, tracking, and insights. We're committed to continuous improvement, listening to our users, and evolving our platform to meet your changing needs.
@@ -40,7 +40,7 @@ export default function AboutUsPage() {
             <div className="absolute inset-0 bg-primary/5 rounded-2xl transform rotate-3"></div>
             <div className="relative bg-card border rounded-2xl p-6 shadow-lg">
               <div className="aspect-video bg-muted/50 rounded-lg flex items-center justify-center mb-6">
-                <div className="text-6xl font-bold text-primary/20">BB</div>
+                <div className="text-6xl font-bold text-primary/20">NF</div>
               </div>
               <h3 className="text-xl font-semibold mb-2">Key Milestones</h3>
               <ul className="space-y-3">
@@ -50,7 +50,7 @@ export default function AboutUsPage() {
                   </div>
                   <div>
                     <span className="font-medium">2024</span>
-                    <p className="text-sm text-muted-foreground">Budget Buddy launched</p>
+                    <p className="text-sm text-muted-foreground">NeoFi launched</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
@@ -89,7 +89,7 @@ export default function AboutUsPage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-semibold mb-4">Our Values</h2>
             <p className="text-muted-foreground">
-              These core principles guide everything we do at Budget Buddy.
+              These core principles guide everything we do at NeoFi.
             </p>
           </div>
           
@@ -132,7 +132,7 @@ export default function AboutUsPage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-semibold mb-4">Meet the Founder</h2>
             <p className="text-muted-foreground">
-              The passionate mind behind Budget Buddy.
+              The passionate mind behind NeoFi.
             </p>
           </div>
           
@@ -161,7 +161,7 @@ export default function AboutUsPage() {
               
               <p className="text-muted-foreground mb-6">
                 Aditya is a passionate Cybersecurity Specialist and Full-Stack Developer currently pursuing a BCA in 
-                Cybersecurity at Sushant University. With a keen interest in financial technology, he created Budget Buddy 
+                Cybersecurity at Sushant University. With a keen interest in financial technology, he created NeoFi 
                 to address the common challenges people face when managing their finances.
               </p>
               
@@ -191,7 +191,7 @@ export default function AboutUsPage() {
           <h2 className="text-2xl font-semibold mb-4">Join Us on Our Mission</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             We're just getting started on our journey to revolutionize personal finance management. 
-            Join thousands of users who are already taking control of their financial future with Budget Buddy.
+            Join thousands of users who are already taking control of their financial future with NeoFi.
           </p>
           
           <div className="flex justify-center gap-4 flex-wrap">
