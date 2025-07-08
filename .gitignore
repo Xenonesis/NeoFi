@@ -42,9 +42,16 @@ lerna-debug.*
 next-env.d.ts
 
 # large files and binaries
+# Keep images in public directory but ignore elsewhere
 *.png
 *.jpg
 *.jpeg
 *.svg
 *.ico
+# Except those inside the public folder
+!public/**/*.png
+!public/**/*.jpg
+!public/**/*.jpeg
+!public/**/*.svg
+!public/**/*.ico
 # public/* Uncomment or remove this line to include public folder
