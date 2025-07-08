@@ -737,7 +737,7 @@ export default function AboutPage() {
                 <div className="relative z-10 space-y-4">
                   {[
                     {
-                      question: "Is Budget Buddy free to use?",
+                      question: "Is NeoFi free to use?",
                       answer: "Yes, NeoFi's core features are completely free to use. We do offer a premium tier with advanced features like AI-powered insights, unlimited budget categories, and priority support."
                     },
                     {
@@ -749,7 +749,7 @@ export default function AboutPage() {
                       answer: "Yes, NeoFi supports CSV imports from most major banks. We're also working on direct bank integrations for seamless transaction syncing, which will be available in our next major update."
                     },
                     {
-                      question: "Is Budget Buddy available on mobile devices?",
+                      question: "Is NeoFi available on mobile devices?",
                       answer: "NeoFi is fully responsive and works on all devices. We also have dedicated iOS and Android apps available for download, providing a native mobile experience with features like fingerprint authentication and offline access to your budget."
                     },
                     {

@@ -4,6 +4,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { AuthProvider } from '@/lib/auth-context'
 import { Inter } from 'next/font/google'
 import { Toaster } from 'sonner'
+import { PreloadAssets } from '@/components/preload-assets'
 
 // Optimize font loading with display swap
 const inter = Inter({
@@ -29,6 +30,7 @@ export const viewport: Viewport = {
 
 // Improve metadata for better SEO and performance
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://neofi.vercel.app'),
   title: 'NeoFi - Smart Money Management',
   description: 'Take control of your finances with NeoFi, an intuitive financial management tool. Track expenses, set budgets, and achieve your financial goals.',
   applicationName: 'NeoFi',
@@ -50,10 +52,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://budget-buddy.com',
+    url: 'https://neofi.vercel.app',
     title: 'NeoFi - Smart Money Management',
     description: 'Take control of your finances with NeoFi, an intuitive financial management tool.',
     siteName: 'NeoFi',
+    images: [
+      {
+        url: '/logo.svg',
+        width: 40,
+        height: 40,
+        alt: 'NeoFi Logo'
+      }
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -63,11 +73,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon.svg', type: 'image/svg+xml' }
     ],
-    apple: [
-      { url: '/apple-icon.png', sizes: '180x180' },
+    shortcut: ['/favicon.ico'],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180' }],
+    other: [
+      {
+        rel: 'apple-touch-icon',
+        url: '/apple-icon.png',
+      }
     ]
   }
 }
@@ -80,8 +95,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -117,6 +134,7 @@ export default function RootLayout({
           defaultTheme="system"
           storageKey="neofi-theme"
         >
+          <PreloadAssets />
           <AuthProvider>
             {children}
           </AuthProvider>

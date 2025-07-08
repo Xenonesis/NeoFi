@@ -77,11 +77,20 @@ const nextConfig = {
         ],
       },
       {
-        source: '/(.*).(jpg|jpeg|png|webp|avif|svg)',
+        source: '/(.*).(jpg|jpeg|png|webp|avif|svg|ico)',
         headers: [
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/(favicon.ico|favicon.svg|apple-icon.png|logo.svg)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
           },
         ],
       },
