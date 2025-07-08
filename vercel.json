@@ -10,5 +10,38 @@
     "NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID": "257578214193",
     "NEXT_PUBLIC_FIREBASE_APP_ID": "1:257578214193:web:6ef9cc2808e134715e8610",
     "NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID": "G-NJGRQPLZ7J"
-  }
+  },
+  "headers": [
+    {
+      "source": "/(.*\\.(ico|png|jpg|jpeg|gif|svg|webp))$",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/1.png",
+      "destination": "/1.png"
+    },
+    {
+      "source": "/logo.svg",
+      "destination": "/logo.svg"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.ico"
+    },
+    {
+      "source": "/favicon.svg",
+      "destination": "/favicon.svg"
+    },
+    {
+      "source": "/apple-icon.png",
+      "destination": "/apple-icon.png"
+    }
+  ]
 }

@@ -29,11 +29,9 @@ const nextConfig = {
 
   // Improve image loading configuration
   images: {
-    // Optimize image sizes for better performance
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
-    // Enable image optimization
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp'],
     minimumCacheTTL: 60,
     remotePatterns: [
       {
@@ -42,7 +40,8 @@ const nextConfig = {
       },
     ],
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    contentDispositionType: 'attachment',
+    unoptimized: process.env.NODE_ENV === 'production',
   },
 
   // Compiler optimizations
@@ -64,7 +63,18 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
 
-  // Configure headers for better caching
+
+
+  // Configure compression
+  compress: true,
+
+  // Configure powered by header
+  poweredByHeader: false,
+
+  // Ensure static files are served correctly
+  trailingSlash: false,
+  
+  // Configure static file serving
   async headers() {
     return [
       {
@@ -77,7 +87,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/(.*).(jpg|jpeg|png|webp|avif|svg|ico)',
+        source: '/(.*)\\.(jpg|jpeg|png|webp|avif|svg|ico)',
         headers: [
           {
             key: 'Cache-Control',
@@ -86,7 +96,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/(favicon.ico|favicon.svg|apple-icon.png|logo.svg)',
+        source: '/(favicon.ico|favicon.svg|apple-icon.png|logo.svg|1.png)',
         headers: [
           {
             key: 'Cache-Control',
@@ -97,11 +107,7 @@ const nextConfig = {
     ];
   },
 
-  // Configure compression
-  compress: true,
 
-  // Configure powered by header
-  poweredByHeader: false,
 };
 
 module.exports = nextConfig;
