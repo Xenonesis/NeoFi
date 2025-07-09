@@ -26,6 +26,7 @@ import {
   User
 } from 'firebase/auth';
 import { auth, db } from './firebase';
+import { createCrudService, BaseEntity } from './crud-service';
 
 // Types
 export interface Profile {
@@ -44,8 +45,7 @@ export interface Profile {
   updatedAt: Date;
 }
 
-export interface Transaction {
-  id: string;
+export interface Transaction extends BaseEntity {
   userId: string;
   amount: number;
   type: 'income' | 'expense';
@@ -57,30 +57,22 @@ export interface Transaction {
   recurringId?: string;
   frequency?: 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'quarterly' | 'annually';
   recurringEndDate?: string;
-  createdAt: Date;
-  updatedAt: Date;
 }
 
-export interface Category {
-  id: string;
+export interface Category extends BaseEntity {
   name: string;
   icon?: string;
   userId?: string;
   type?: 'income' | 'expense' | 'both';
-  createdAt: Date;
-  updatedAt: Date;
 }
 
-export interface Budget {
-  id: string;
+export interface Budget extends BaseEntity {
   userId: string;
   categoryId: string;
   categoryName?: string;
   amount: number;
   period: 'daily' | 'weekly' | 'monthly' | 'yearly';
   order?: number;
-  createdAt: Date;
-  updatedAt: Date;
 }
 
 // Auth Services
@@ -408,57 +400,62 @@ export const dbService = {
   }
 };
 
+// Create CRUD services using the generic service
+const transactionCrud = createCrudService<Transaction>('transactions');
+const categoryCrud = createCrudService<Category>('categories');
+const budgetCrud = createCrudService<Budget>('budgets');
+
 // Transaction Service
 export const transactionService = {
   async getByUserId(userId: string) {
-    const { data } = await dbService.getTransactions(userId);
+    const { data } = await transactionCrud.getByUserId(userId, 'date');
     return data;
   },
   async createTransaction(transactionData: Omit<Transaction, 'id' | 'createdAt' | 'updatedAt'>) {
-    return await dbService.createTransaction(transactionData);
+    return await transactionCrud.create(transactionData);
   },
   async updateTransaction(id: string, updates: Partial<Transaction>) {
-    return await dbService.updateTransaction(id, updates);
+    return await transactionCrud.update(id, updates);
   },
   async delete(id: string) {
-    return await dbService.deleteTransaction(id);
+    return await transactionCrud.delete(id);
   },
   async createCategory(categoryData: Omit<Category, 'id' | 'createdAt' | 'updatedAt'>) {
-    return await dbService.createCategory(categoryData);
+    return await categoryCrud.create(categoryData);
   }
 };
 
 // Category Service
 export const categoryService = {
   async getAll() {
-    const { data } = await dbService.getCategories();
+    const { data } = await categoryCrud.getAll();
     return data || [];
   },
   async create(categoryData: Omit<Category, 'id' | 'createdAt' | 'updatedAt'>) {
-    return await dbService.createCategory(categoryData);
+    return await categoryCrud.create(categoryData);
   },
   async update(id: string, updates: Partial<Category>) {
-    return await dbService.updateCategory(id, updates);
+    return await categoryCrud.update(id, updates);
   },
   async delete(id: string) {
-    return await dbService.deleteCategory(id);
+    return await categoryCrud.delete(id);
   }
 };
 
 // Budget Service
 export const budgetService = {
   async getByUserId(userId: string) {
-    const { data } = await dbService.getBudgets(userId);
+    const { data } = await budgetCrud.getByUserId(userId);
     return data || [];
   },
   async create(budgetData: Omit<Budget, 'id' | 'createdAt' | 'updatedAt'>) {
-    return await dbService.createBudget(budgetData);
+    return await budgetCrud.create(budgetData);
   },
   async update(id: string, updates: Partial<Budget>) {
-    return await dbService.updateBudget(id, updates);
+    return await budgetCrud.update(id, updates);
   },
   async delete(id: string) {
-    return await dbService.deleteBudget(id);
+    return await budgetCrud.delete(id);
   }
 };
 

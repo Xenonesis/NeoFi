@@ -308,25 +308,25 @@ export default function AboutPage() {
                   <div className="space-y-4">
                     <h3 className="text-sm font-medium flex items-center gap-2 text-primary">
                       <GitBranch className="w-4 h-4" />
-                      Version 0.30.0-alpha key update:
+                      Version 0.50 latest update:
                     </h3>
-                    <p className="text-xs text-muted-foreground mb-2">Released on July 8, 2025</p>
+                    <p className="text-xs text-muted-foreground mb-2">Released on July 09, 2025</p>
                     <ul className="space-y-2.5 text-sm">
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">AI-Powered Financial Insights with smart spending pattern detection</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">Advanced Budget Analytics with predictive spending forecasts</span>
                       </li>
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">Completely Redesigned User Interface with modern aesthetic</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">Multi-Currency Support for international users</span>
                       </li>
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">Enhanced Mobile Experience with native-feeling interactions</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">Enhanced Data Export capabilities (PDF, Excel, CSV)</span>
                       </li>
                       <li className="flex items-start gap-2 group">
                         <span className="text-primary group-hover:scale-110 transition-transform">•</span>
-                        <span className="group-hover:translate-x-0.5 transition-transform">Natural Language Transaction Search for intuitive data filtering</span>
+                        <span className="group-hover:translate-x-0.5 transition-transform">Smart Notifications for budget alerts and bill reminders</span>
                       </li>
                     </ul>
                   </div>
@@ -362,16 +362,120 @@ export default function AboutPage() {
                 {/* Timeline line */}
                 <div className="absolute left-[15px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/80 to-primary/10 rounded-full"></div>
                 
-                {/* Version 0.30.0-alpha */}
+                {/* Version 0.50 */}
+                <div className="relative pl-10 pb-8">
+                  <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-primary to-violet-500 flex items-center justify-center shadow-lg shadow-primary/30 z-10">
+                    <span className="text-xs font-semibold text-white">0.50</span>
+                  </div>
+                  <div className="absolute left-[15px] top-[30px] bottom-0 w-0.5 bg-gradient-to-b from-primary/70 via-primary/50 to-transparent"></div>
+                  <div className="bg-card rounded-lg border border-primary/10 shadow-md overflow-hidden">
+                    <div className="bg-gradient-to-r from-primary/5 to-violet-500/5 px-4 py-2.5 border-b border-primary/10 flex justify-between items-center">
+                      <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 shadow-sm">v0.50</Badge>
+                      <span className="text-xs text-muted-foreground">Released on July 09, 2025</span>
+                    </div>
+                    <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Advanced Budget Analytics with predictive spending forecasts</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Multi-Currency Support for international users</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Enhanced Data Export capabilities (PDF, Excel, CSV)</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Smart Notifications for budget alerts and bill reminders</span>
+                        </li>
+                      </ul>
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Improved Performance with 40% faster load times</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Dark Mode Enhancements with better contrast and readability</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Mobile App Optimization for iOS and Android platforms</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Automated Backup System for data protection</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Version 0.40 */}
+                <div className="relative pl-10 pb-8">
+                  <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-primary to-violet-500/90 flex items-center justify-center shadow-lg shadow-primary/25 z-10">
+                    <span className="text-xs font-semibold text-white">0.40</span>
+                  </div>
+                  <div className="absolute left-[15px] top-[30px] bottom-0 w-0.5 bg-gradient-to-b from-primary/60 via-primary/40 to-transparent"></div>
+                  <div className="bg-card rounded-lg border border-primary/10 shadow-md overflow-hidden">
+                    <div className="bg-gradient-to-r from-primary/5 to-violet-500/5 px-4 py-2.5 border-b border-primary/10 flex justify-between items-center">
+                      <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 shadow-sm">v0.40</Badge>
+                      <span className="text-xs text-muted-foreground">Released on July 9, 2025</span>
+                    </div>
+                    <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Enhanced security features for user data protection</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Performance optimizations for faster load times</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Updated user interface elements for better usability</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Advanced Chart Visualizations with interactive elements</span>
+                        </li>
+                      </ul>
+                      <ul className="space-y-1.5">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Additional customization options for user preferences</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Integration with more financial tools and services</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Automated Backup System for data protection</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Enhanced error handling and user feedback</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Version 0.50.0-alpha */}
                 <div className="relative pl-10 pb-8">
                   <div className="absolute left-0 top-1 w-[30px] h-[30px] rounded-full bg-gradient-to-tr from-primary to-violet-500/80 flex items-center justify-center shadow-lg shadow-primary/20 z-10">
-                    <span className="text-xs font-semibold text-white">0.30</span>
+                    <span className="text-xs font-semibold text-white">0.50</span>
                   </div>
                   <div className="absolute left-[15px] top-[30px] bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-primary/30 to-transparent"></div>
                   <div className="bg-card rounded-lg border border-primary/10 shadow-md overflow-hidden">
                     <div className="bg-gradient-to-r from-primary/5 to-violet-500/5 px-4 py-2.5 border-b border-primary/10 flex justify-between items-center">
-                      <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 shadow-sm">v0.30.0-alpha</Badge>
-                      <span className="text-xs text-muted-foreground">Released on July 8, 2025</span>
+                      <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 shadow-sm">v0.50.0-alpha</Badge>
+                      <span className="text-xs text-muted-foreground">Released on July 9, 2025</span>
                     </div>
                     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                       <ul className="space-y-1.5">
@@ -387,6 +491,10 @@ export default function AboutPage() {
                           <span className="text-primary">•</span>
                           <span>Enhanced Mobile Experience with native-feeling interactions</span>
                         </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Real-time Sync across all devices</span>
+                        </li>
                       </ul>
                       <ul className="space-y-1.5">
                         <li className="flex items-start gap-1.5">
@@ -400,6 +508,10 @@ export default function AboutPage() {
                         <li className="flex items-start gap-1.5">
                           <span className="text-primary">•</span>
                           <span>Personalized Financial Advisory using machine learning</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-primary">•</span>
+                          <span>Custom Category Creation with personalized icons</span>
                         </li>
                       </ul>
                     </div>
@@ -1139,4 +1251,4 @@ export default function AboutPage() {
       </div>
     </div>
   );
-} 
+}

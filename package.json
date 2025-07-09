@@ -1,6 +1,6 @@
 {
   "name": "neofi",
-  "version": "0.30.0-alpha",
+  "version": "0.50.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

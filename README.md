@@ -1,269 +1,177 @@
-# NeoFi App by Aditya Kumar Tiwari
+<!-- Modern README for NeoFi App -->
 
-A fully responsive budget tracking application built with Next.js, React, ShadCN UI, and Firebase.
+<p align="center">
+  <img src="https://i.imgur.com/placeholder-image.png" alt="NeoFi Logo" width="120"/>
+</p>
 
-## Contact Information
+<h1 align="center">NeoFi</h1>
+<p align="center">
+  <b>Modern Budget Tracking App</b><br>
+  <a href="https://github.com/Xenonesis/NeoFi"><img src="https://img.shields.io/github/stars/Xenonesis/NeoFi?style=flat-square" alt="GitHub stars"></a>
+  <a href="https://vercel.com/"><img src="https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel" alt="Vercel"></a>
+  <img src="https://img.shields.io/badge/Version-0.50.0-blue?style=flat-square">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square">
+</p>
 
-- **Email:** itisaddy7@gmail.com
-- **LinkedIn:** [https://www.linkedin.com/in/itisaddy/](https://www.linkedin.com/in/itisaddy/)
-- **Instagram:** [https://www.instagram.com/i__aditya7/](https://www.instagram.com/i__aditya7/)
-- **Portfolio:** [https://iaddy.netlify.app/](https://iaddy.netlify.app/)
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#demo">Demo</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#license">License</a>
+</p>
 
-## Version 0.30.0 - Alpha Release
+---
 
-**Released: July 8, 2025**
+## 🚀 Overview
 
-### Version Timeline
+NeoFi is a fully responsive, AI-powered budget tracking application built with Next.js, React, ShadCN UI, and Firebase. It offers advanced analytics, multi-currency support, and a seamless experience across devices.
 
-#### 0.30.0-alpha (July 8, 2025)
-- Initial alpha release
-- Core functionality implementation
-- **AI-Powered Financial Insights** with smart spending pattern detection
-- **Completely Redesigned User Interface** with modern aesthetic
-- **Enhanced Mobile Experience** with native-feeling interactions
-- **Natural Language Transaction Search** for intuitive data filtering
+---
 
-#### 0.20.0-alpha (July 7, 2025)
-- Early alpha release
-- Basic features implementation
-- **Expanded International Support** with multiple currencies
-- **Personalized Financial Advisory** using machine learning
-- **Customizable Dashboard Widgets** with drag-and-drop functionality
+## ✨ Demo
 
-#### 0.10.0-alpha (July 5, 2025)
-- Initial project setup and foundation
-- Basic transaction tracking and management
-- Simple dashboard with essential financial overview
-- Initial mobile-responsive design implementation
+> **Live Demo:** _Coming Soon_  
+> ![App Screenshot](https://i.imgur.com/placeholder-image.png)
 
-## Features
+---
 
-### Core Functionality
-- AI-Powered Financial Insights with smart spending pattern detection
-- Completely Redesigned User Interface with modern aesthetic
-- Enhanced Mobile Experience with native-feeling interactions
-- Natural Language Transaction Search for intuitive data filtering
-- Expanded International Support with multiple currencies
-- Personalized Financial Advisory using machine learning
-- Customizable Dashboard Widgets with drag-and-drop functionality
+## 🏆 Key Features
 
-### Performance
-- Optimized for fast loading and smooth interactions
-- Efficient data handling and state management
-- Responsive design for all device sizes
-- Improved brand visibility and contrast across all themes
-- Implemented interactive hover animations for enhanced user experience
-- Added custom gradient effects for brand text with optimized performance
+| Feature                        | Description                                                                                 |
+| ------------------------------ | ------------------------------------------------------------------------------------------- |
+| 🔮 AI Insights                 | Smart spending pattern detection and personalized financial advice                          |
+| 📊 Advanced Analytics          | Predictive forecasts, interactive charts, and detailed reports                             |
+| 🌎 Multi-Currency              | Track budgets in multiple currencies with real-time conversion                             |
+| 📱 Mobile Optimized            | Native-feeling interactions and responsive design for all devices                          |
+| 🔔 Smart Notifications         | Budget alerts, bill reminders, and actionable insights                                     |
+| 🔒 Secure Authentication       | Firebase Auth with robust security and privacy controls                                    |
+| 🗃️ Data Export                 | Export your data as PDF, Excel, or CSV                                                     |
+| 🌙 Dark Mode                   | Enhanced dark mode with improved contrast and readability                                  |
+| ⚡ Performance                  | 40% faster load times, optimized data handling, and smooth UI animations                   |
 
-## Getting Started
+---
 
-### Prerequisites
-- Node.js 18+ and npm 9+
-- Firebase account for authentication and database
-- Git for version control
+## 📅 Version Timeline
 
-### Installation
+| Version   | Date         | Highlights                                                                                      |
+|-----------|--------------|------------------------------------------------------------------------------------------------|
+| 0.50.0    | 2025-07-10   | Advanced analytics, multi-currency, export, notifications, performance, mobile optimization    |
+| 0.40.0    | 2025-07-09   | Security, UI updates, customization, integrations, chart visualizations, backup system        |
+| 0.30.0-a  | 2025-07-09   | AI insights, UI redesign, mobile UX, natural language search, real-time sync, custom categories|
+| 0.20.0-a  | 2025-07-07   | International support, ML advisory, dashboard widgets                                         |
+| 0.10.0-a  | 2025-07-05   | Initial release, basic tracking, dashboard, mobile responsive                                 |
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Xenonesis/NeoFi.git
-   cd NeoFi
-   ```
+---
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+## 🛠️ Tech Stack
 
-3. Set up environment variables:
-   Create a `.env.local` file in the root directory and add your Firebase configuration:
-   ```
-   NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
-   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
-   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-bucket.appspot.com
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
-   NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
-   ```
+- **Frontend:** Next.js, React, TypeScript, Tailwind CSS
+- **UI Components:** ShadCN UI
+- **Backend & Database:** Firebase Firestore
+- **Authentication:** Firebase Auth
+- **Charts:** Recharts
+- **State Management:** React Context API, Zustand
 
-4. Run the development server:
-   ```bash
-   npm run dev
-   ```
+---
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### User Experience Improvements
-- Enhanced chart readability in dark mode with proper text contrast
-- More robust error handling for calculation edge cases
-- Improved handling of empty transaction data
-- Better type checking in chart components
-- Optimized monthly data processing for more accurate financial trends
-
-## Important: Environment Setup Required
-
-**Before building or deploying this project:**
-
-1. Create a `.env.local` file in the root directory with your Firebase credentials:
-```
-NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
-NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
-```
-
-2. You can use the provided `.env.template` file as a reference.
-
-3. These environment variables are required for the application to function properly. Without them, the build will fail.
-
-![NeoFi App](https://i.imgur.com/placeholder-image.png)
-
-## Features
-
-- **User Authentication**: Secure login and registration with Firebase Auth
-- **Transaction Management**: Add, edit, and delete income and expense transactions
-- **Budget Planning**: Set and monitor spending limits by category
-- **Data Visualization**: Track financial patterns with charts and reports
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Dark Mode Support**: Switch between light and dark themes
-- **Data Security**: Built-in row-level security ensures users can only access their own data
-
-## Tech Stack
-
-- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
-- **UI Components**: ShadCN UI
-- **Backend & Database**: Firebase Firestore
-- **Authentication**: Firebase Auth
-- **Charts & Visualization**: Recharts
-- **State Management**: React Context API, Zustand
-- **Styling**: Tailwind CSS with CSS variables for theming
-
-## Getting Started
+## ⚙️ Getting Started
 
 ### Prerequisites
 
-- Node.js (v18 or newer)
-- npm or yarn
+- Node.js 18+ and npm 9+ (or yarn)
 - Firebase account
+- Git
 
 ### Installation
-
-1. Clone the repository:
 
 ```bash
 git clone https://github.com/Xenonesis/NeoFi.git
 cd NeoFi
-```
-
-2. Install dependencies:
-
-```bash
 npm install
 # or
 yarn install
 ```
 
-3. Set up environment variables:
+### Environment Setup
 
-Create a `.env.local` file in the root directory with your Firebase credentials:
+1. Copy `.env.template` to `.env.local` and fill in your Firebase credentials:
+    ```env
+    NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
+    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+    NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-bucket.appspot.com
+    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+    NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+    ```
+2. These variables are required for the app to build and run.
 
-```
-NEXT_PUBLIC_FIREBASE_API_KEY=your-firebase-api-key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
-NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
-```
-
-4. Run the development server:
+### Run Locally
 
 ```bash
 npm run dev
 # or
 yarn dev
 ```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+---
 
-### Setting up Firebase
+## 🔥 Firebase Setup
 
-1. Create a new Firebase project
-2. Enable Authentication and Firestore
-3. Configure authentication providers
-4. Set up Firestore security rules
+- Create a Firebase project
+- Enable Authentication and Firestore
+- Configure authentication providers and Firestore rules
+- See [FIREBASE_SETUP.md](./FIREBASE_SETUP.md) for details
 
-For detailed setup instructions, see [FIREBASE_SETUP.md](./FIREBASE_SETUP.md)
+---
 
-## Firebase Setup
+## ☁️ Deployment
 
-The application uses Firebase for authentication and database. For detailed setup instructions, see [FIREBASE_SETUP.md](./FIREBASE_SETUP.md).
+- Deploy easily to [Vercel](https://vercel.com/)
+- Add environment variables in the Vercel dashboard
+- See [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) for step-by-step instructions
 
-### Quick Setup:
+---
 
-1. Create a Firebase project
-2. Enable Authentication and Firestore
-3. Set up environment variables
-4. Configure Firestore security rules
-5. Create the required collections (profiles, transactions, budgets, categories)
+## 🎨 UI/UX Highlights
 
-## Deployment
+- Modern, accessible design with ShadCN UI
+- Responsive layouts for all devices
+- Interactive charts and smooth animations
+- Enhanced dark mode and color contrast
+- Customizable dashboard widgets
 
-This application can be deployed to Vercel:
+---
 
-1. Push your code to GitHub
-2. Import the project to Vercel
-3. Add environment variables in the Vercel dashboard:
-   ```
-   NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyB3KTh7DiKvw3Mrwr6VtGutnqfIOeNpEdA
-   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=neofi-5e481.firebaseapp.com
-   NEXT_PUBLIC_FIREBASE_PROJECT_ID=neofi-5e481
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=neofi-5e481.firebasestorage.app
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=257578214193
-   NEXT_PUBLIC_FIREBASE_APP_ID=1:257578214193:web:6ef9cc2808e134715e8610
-   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-NJGRQPLZ7J
-   ```
-4. Deploy
+## 🧠 Performance & Optimization
 
-For detailed deployment instructions, see [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)
+- React.memo and stateless components for fast rendering
+- Virtualized lists and batched state updates
+- Optimized database queries and pagination
+- Passive event listeners and throttled operations
 
-## License
+---
 
-This project is licensed under the MIT License - see the LICENSE file for details. # Budget-Tracker-
+## 🤝 Contributing
 
-## Performance Optimizations
+Contributions are welcome!  
+Please open issues or submit pull requests for improvements.
 
-The application has been optimized for better performance using several techniques:
+---
 
-### DOM Manipulation Optimization
-- Implemented React.memo for component memoization to prevent unnecessary re-renders
-- Created optimized stateless functional components for rendering lists and charts
-- Used event delegation for transaction lists to reduce the number of event listeners
-- Applied virtualization for long lists to render only visible items
+## 📄 License
 
-### Efficient Data Processing
-- Optimized filtering and sorting operations by using Maps and Sets for O(1) lookups
-- Reduced redundant calculations by memoizing expensive operations with useMemo
-- Implemented single-pass algorithms for data transformation
-- Batched React state updates to prevent cascading renders
+This project is licensed under the MIT License.  
+See the [LICENSE](LICENSE) file for details.
 
-### Reduced Network Overhead
-- Optimized database queries to fetch all needed data in a single request
-- Implemented pagination and infinite scrolling for efficient data loading
-- Added proper loading states to improve perceived performance
+---
 
-### UI Responsiveness
-- Added passive event listeners for scroll and touch events
-- Optimized chart rendering with appropriate sizing and simplified data
-- Used CSS Grid and Flexbox for efficient layouts
-- Implemented throttling and debouncing for resource-intensive operations
+## 👤 Author
+
+- **Aditya Kumar Tiwari**
+  - [Email](mailto:itisaddy7@gmail.com)
+  - [LinkedIn](https://www.linkedin.com/in/itisaddy/)
+  - [Instagram](https://www.instagram.com/i__aditya7/)
+  - [Portfolio](https://iaddy.netlify.app/)

@@ -22,7 +22,9 @@ import {
 } from "recharts";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { StatCard, ChartCard } from "@/components/ui";
 import { ArrowUpIcon, ArrowDownIcon, TrendingUpIcon, AreaChart as ChartIcon, PieChart as PieChartIcon, Target } from "lucide-react";
+import { getMonthlyData, getCategoryData, getTopCategories, calculateSummary } from "@/lib/data-processing";
 import { cn } from "@/lib/utils";
 
 interface Transaction {
@@ -59,52 +61,32 @@ const COLORS = [
 
 // Memoized chart components to prevent unnecessary re-renders
 function ExpenseCategoryChartComponent({ categoryData }: { categoryData: { name: string; value: number; color: string }[] }) {
-  if (categoryData.length === 0) {
-    return (
-      <div className="flex h-80 items-center justify-center text-muted-foreground">
-        No expense data available
-      </div>
-    );
-  }
-
   // Calculate total to determine percentages
   const total = categoryData.reduce((sum, category) => sum + category.value, 0);
   
   // Group small categories (less than 5%) as "Other"
-  const threshold = 0.05; // 5%
+  const threshold = 0.05;
   const mainCategories = categoryData.filter(item => item.value / total >= threshold);
-  
   const smallCategories = categoryData.filter(item => item.value / total < threshold);
   const otherValue = smallCategories.reduce((sum, item) => sum + item.value, 0);
   
-  // Final data with small categories grouped as "Other"
   const chartData = [
     ...mainCategories,
-    ...(otherValue > 0 
-      ? [{ name: 'Other', value: otherValue, color: '#9CA3AF' }] 
-      : [])
+    ...(otherValue > 0 ? [{ name: 'Other', value: otherValue, color: '#9CA3AF' }] : [])
   ].sort((a, b) => b.value - a.value);
 
-  // Custom label that shows percentages more clearly
   const RADIAN = Math.PI / 180;
-  const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name }: any) => {
+  const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }: any) => {
+    if (percent < 0.05) return null;
+    
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
     
-    // Only show labels for segments that are big enough (over 5%)
-    if (percent < 0.05) return null;
-    
     return (
       <text 
-        x={x} 
-        y={y} 
-        fill="white" 
-        textAnchor="middle" 
-        dominantBaseline="central"
-        fontSize={12}
-        fontWeight="bold"
-        style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
+        x={x} y={y} fill="white" textAnchor="middle" dominantBaseline="central"
+        fontSize={12} fontWeight="bold" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}
       >
         {`${(percent * 100).toFixed(0)}%`}
       </text>
@@ -112,87 +94,44 @@ function ExpenseCategoryChartComponent({ categoryData }: { categoryData: { name:
   };
 
   return (
-    <Card className="h-full">
-      <CardHeader className="pb-2">
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-base font-medium flex items-center gap-2">
-            <PieChartIcon className="h-4 w-4 text-primary" />
-            Expense Categories
-          </CardTitle>
-        </div>
-        <CardDescription>
-          How your expenses are distributed
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        {categoryData.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-64 text-center p-4">
-            <p className="text-muted-foreground">No expense data available for the selected period.</p>
-          </div>
-        ) : (
-          <div className="h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <defs>
-                  {categoryData.map((entry, index) => (
-                    <filter key={`shadow-${index}`} id={`shadow-${index}`} height="200%">
-                      <feDropShadow dx="0" dy="0" stdDeviation="2" floodColor={COLORS[index % COLORS.length]} floodOpacity="0.5"/>
-                    </filter>
-                  ))}
-                </defs>
-                <Pie
-                  data={chartData}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  outerRadius={80}
-                  innerRadius={40}
-                  paddingAngle={3}
-                  dataKey="value"
-                  label={renderCustomizedLabel}
-                  stroke="#000"
-                  strokeOpacity={0.1}
-                  strokeWidth={1}
-                >
-                  {chartData.map((entry, index) => (
-                    <Cell 
-                      key={`cell-${index}`} 
-                      fill={COLORS[index % COLORS.length]} 
-                      style={{ filter: `url(#shadow-${index})` }}
-                    />
-                  ))}
-                </Pie>
-                <Tooltip 
-                  formatter={(value, name, props) => [
-                    formatCurrency(value as number), 
-                    props.payload.name
-                  ]} 
-                  contentStyle={{ 
-                    backgroundColor: 'var(--card)', 
-                    borderColor: 'var(--border)',
-                    borderRadius: '0.5rem',
-                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                    padding: '0.5rem'
-                  }}
-                  itemStyle={{ color: 'var(--foreground)' }}
-                />
-                <Legend 
-                  layout="vertical"
-                  align="right"
-                  verticalAlign="middle"
-                  wrapperStyle={{ paddingLeft: 20, fontSize: 12 }}
-                  formatter={(value, entry: any) => (
-                    <span style={{ color: 'var(--foreground)', display: 'inline-flex', alignItems: 'center' }}>
-                      {value}: {((entry.payload.value / total) * 100).toFixed(1)}% 
-                    </span>
-                  )}
-                />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-        )}
-      </CardContent>
-    </Card>
+    <ChartCard
+      title="Expense Categories"
+      description="How your expenses are distributed"
+      icon={<PieChartIcon className="h-4 w-4 text-primary" />}
+      isEmpty={categoryData.length === 0}
+      emptyMessage="No expense data available for the selected period."
+    >
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart>
+          <Pie
+            data={chartData}
+            cx="50%" cy="50%"
+            labelLine={false}
+            outerRadius={80}
+            innerRadius={40}
+            paddingAngle={3}
+            dataKey="value"
+            label={renderCustomizedLabel}
+          >
+            {chartData.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+          <Tooltip 
+            formatter={(value, name, props) => [formatCurrency(value as number), props.payload.name]} 
+          />
+          <Legend 
+            layout="vertical" align="right" verticalAlign="middle"
+            wrapperStyle={{ paddingLeft: 20, fontSize: 12 }}
+            formatter={(value, entry: any) => (
+              <span style={{ color: 'var(--foreground)' }}>
+                {value}: {((entry.payload.value / total) * 100).toFixed(1)}%
+              </span>
+            )}
+          />
+        </PieChart>
+      </ResponsiveContainer>
+    </ChartCard>
   );
 }
 
@@ -200,7 +139,6 @@ const ExpenseCategoryChart = memo(ExpenseCategoryChartComponent);
 ExpenseCategoryChart.displayName = 'ExpenseCategoryChart';
 
 function IncomeExpenseChartComponent({ monthlyData }: { monthlyData: { name: string; income: number; expense: number }[] }) {
-  // Calculate net amounts for each month (income - expense)
   const chartData = useMemo(() => {
     return monthlyData.map(item => ({
       ...item,
@@ -209,198 +147,39 @@ function IncomeExpenseChartComponent({ monthlyData }: { monthlyData: { name: str
   }, [monthlyData]);
 
   return (
-    <Card className="h-full">
-      <CardHeader className="pb-2">
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-base font-medium flex items-center gap-2">
-            <ChartIcon className="h-4 w-4 text-primary" />
-            Income vs. Expenses
-          </CardTitle>
-        </div>
-        <CardDescription>
-          Monthly financial flow comparison
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        {chartData.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-64 text-center p-4">
-            <p className="text-muted-foreground">No transaction data available for the selected period.</p>
-          </div>
-        ) : (
-          <div className="h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <ComposedChart
-                data={chartData}
-                margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip formatter={(value) => formatCurrency(value as number)} />
-                <Legend />
-                <Bar dataKey="expense" name="Expenses" fill="#EF4444" />
-                <Bar dataKey="income" name="Income" fill="#10B981" />
-                <Line type="monotone" dataKey="net" name="Net Balance" stroke="#6366F1" />
-              </ComposedChart>
-            </ResponsiveContainer>
-          </div>
-        )}
-      </CardContent>
-    </Card>
+    <ChartCard
+      title="Income vs. Expenses"
+      description="Monthly financial flow comparison"
+      icon={<ChartIcon className="h-4 w-4 text-primary" />}
+      isEmpty={chartData.length === 0}
+      emptyMessage="No transaction data available for the selected period."
+    >
+      <ResponsiveContainer width="100%" height="100%">
+        <ComposedChart data={chartData} margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip formatter={(value) => formatCurrency(value as number)} />
+          <Legend />
+          <Bar dataKey="expense" name="Expenses" fill="#EF4444" />
+          <Bar dataKey="income" name="Income" fill="#10B981" />
+          <Line type="monotone" dataKey="net" name="Net Balance" stroke="#6366F1" />
+        </ComposedChart>
+      </ResponsiveContainer>
+    </ChartCard>
   );
 }
 
 const IncomeExpenseChart = memo(IncomeExpenseChartComponent);
 IncomeExpenseChart.displayName = 'IncomeExpenseChart';
 
-// Optimize the monthly data calculation with memoization and efficient date handling
-function getMonthlyData(transactions: any[]) {
-  // If no transactions, return empty array
-  if (!transactions || transactions.length === 0) {
-    return [];
-  }
-  
-  const now = new Date();
-  const monthsMap: Record<string, { name: string; income: number; expense: number; balance: number }> = {};
-  
-  // Get the past 6 months in YYYY-MM format
-  for (let i = 0; i < 6; i++) {
-    const date = new Date(now.getFullYear(), now.getMonth() - i, 1);
-    const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-    const monthName = date.toLocaleString('default', { month: 'short' });
-    
-    monthsMap[monthKey] = {
-      name: monthName,
-      income: 0,
-      expense: 0,
-      balance: 0 // Will calculate after summing income and expense
-    };
-  }
-  
-  // Add transaction amounts to the respective months
-  transactions.forEach(tx => {
-    if (!tx.date) return; // Skip if date is missing
-    
-    const monthKey = tx.date.substring(0, 7); // Get YYYY-MM part
-    if (monthsMap[monthKey]) {
-      // Parse amount to ensure it's a number
-      const amount = Number(tx.amount) || 0;
-      
-      if (tx.type === 'income') {
-        monthsMap[monthKey].income += amount;
-      } else if (tx.type === 'expense') {
-        monthsMap[monthKey].expense += amount;
-      }
-    }
-  });
-  
-  // Calculate balance for each month and convert to array
-  const result = Object.values(monthsMap).map(month => {
-    month.balance = month.income - month.expense;
-    return month;
-  });
-  
-  // Sort by most recent month first
-  return result.reverse();
-}
 
-// Optimize category data calculation with a single pass through transactions
-function getCategoryData(transactions: any[]) {
-  const colors = [
-    "#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF",
-    "#FF9F40", "#8AC926", "#1982C4", "#6A4C93", "#F15BB5"
-  ];
-  
-  // Only consider expenses for the category chart
-  const expenseTransactions = transactions.filter(t => t.type === 'expense');
-  
-  if (expenseTransactions.length === 0) {
-    return [];
-  }
-  
-  // Use a map for O(1) lookup instead of repeated filtering
-  const categorySums = new Map();
-  
-  // Single pass to calculate all category sums
-  expenseTransactions.forEach(t => {
-    const category = t.category || 'Uncategorized';
-    if (!categorySums.has(category)) {
-      categorySums.set(category, 0);
-    }
-    categorySums.set(category, categorySums.get(category) + t.amount);
-  });
-  
-  // Convert to array for chart data
-  const result = Array.from(categorySums.entries()).map(([name, value], index) => ({
-    name,
-    value,
-    color: colors[index % colors.length]
-  }));
-  
-  return result.sort((a, b) => b.value - a.value);
-}
 
-// Generate top categories by usage and spending - optimized to reduce iterations
-const getTopCategories = (transactions: any[]) => {
-  const colors = [
-    "#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF",
-    "#FF9F40", "#8AC926", "#1982C4", "#6A4C93", "#F15BB5"
-  ];
-  
-  // Only consider expenses for the category analysis
-  const expenseTransactions = transactions.filter(t => t.type === 'expense');
-  
-  if (expenseTransactions.length === 0) {
-    return [];
-  }
-  
-  // Use reduce instead of forEach to minimize iterations
-  const categories = expenseTransactions.reduce((acc, t) => {
-    const categoryName = t.category || 'Uncategorized';
-    
-    if (!acc[categoryName]) {
-      acc[categoryName] = { count: 0, total: 0 };
-    }
-    
-    acc[categoryName].count += 1;
-    acc[categoryName].total += t.amount;
-    
-    return acc;
-  }, {} as Record<string, { count: number; total: number }>);
-  
-  return Object.keys(categories)
-    .map((name, index) => ({
-      name,
-      count: categories[name].count,
-      total: categories[name].total,
-      color: colors[index % colors.length]
-    }))
-    .sort((a, b) => b.total - a.total)
-    .slice(0, 5); // Get top 5 categories
-};
 
-// Use React.memo for optimized rendering of card components
-const StatCard = memo(({ title, value, icon, className = "" }: { 
-  title: string; 
-  value: string | number; 
-  icon?: React.ReactNode;
-  className?: string;
-}) => (
-  <div className={`p-4 rounded-lg border bg-card ${className}`}>
-    <div className="flex justify-between">
-      <div>
-        <h3 className="text-sm font-medium text-muted-foreground mb-1">{title}</h3>
-        <p className="text-2xl font-bold">{value}</p>
-      </div>
-      {icon && (
-        <div className="p-2 rounded-full bg-primary/10 text-primary">
-          {icon}
-        </div>
-      )}
-    </div>
-  </div>
-));
-StatCard.displayName = 'StatCard';
+
+
+
+
 
 export default function DashboardPage() {
   const [stats, setStats] = useState<DashboardStats>({
@@ -529,23 +308,14 @@ export default function DashboardPage() {
         category: categories[t.categoryId]?.name || 'Uncategorized'
       }));
 
-      // Calculate all stats at once in a single pass
-      let totalIncome = 0;
-      let totalExpense = 0;
-      
-      processedTransactions.forEach(t => {
-        if (t.type === 'income') {
-          totalIncome += t.amount;
-        } else {
-          totalExpense += t.amount;
-        }
-      });
+      // Calculate summary using utility function
+      const summary = calculateSummary(processedTransactions);
 
       // Create the new stats object
       const newStats = {
-        totalIncome,
-        totalExpense,
-        balance: totalIncome - totalExpense,
+        totalIncome: summary.totalIncome,
+        totalExpense: summary.totalExpense,
+        balance: summary.balance,
         recentTransactions: processedTransactions.slice(0, 5),
         monthlyData: getMonthlyData(processedTransactions),
         categoryData: getCategoryData(processedTransactions),
