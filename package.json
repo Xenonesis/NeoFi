@@ -1,6 +1,6 @@
 {
   "name": "neofi",
-  "version": "0.50.0",
+  "version": "0.60.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,6 +8,7 @@
     "vercel-build": "node scripts/ensure-env.js && next build",
     "start": "next start",
     "lint": "next lint",
+    "validate-env": "node scripts/validate-env.js",
     "firebase:deploy": "node scripts/deploy-firebase.js",
     "firebase:test": "node scripts/firebase-test.js",
     "firebase:emulator": "firebase emulators:start",

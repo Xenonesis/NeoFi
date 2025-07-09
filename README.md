@@ -106,6 +106,7 @@ yarn install
     NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
     ```
 2. These variables are required for the app to build and run.
+3. **Security**: Never commit actual secrets to version control. See [SECURITY.md](./SECURITY.md) for best practices.
 
 ### Run Locally
 

@@ -2,15 +2,6 @@
   "buildCommand": "npm run vercel-build",
   "framework": "nextjs",
   "outputDirectory": ".next",
-  "env": {
-    "NEXT_PUBLIC_FIREBASE_API_KEY": "AIzaSyB3KTh7DiKvw3Mrwr6VtGutnqfIOeNpEdA",
-    "NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN": "neofi-5e481.firebaseapp.com",
-    "NEXT_PUBLIC_FIREBASE_PROJECT_ID": "neofi-5e481",
-    "NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET": "neofi-5e481.firebasestorage.app",
-    "NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID": "257578214193",
-    "NEXT_PUBLIC_FIREBASE_APP_ID": "1:257578214193:web:6ef9cc2808e134715e8610",
-    "NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID": "G-NJGRQPLZ7J"
-  },
   "headers": [
     {
       "source": "/:path*.(ico|png|jpg|jpeg|gif|svg|webp)",
