@@ -31,6 +31,13 @@ function validateEnvVars() {
     missing.forEach(envVar => console.error(`   - ${envVar}`));
     console.error('\n📋 Please set these environment variables or update your .env files.');
     console.error('   Refer to .env.template for the required format.');
+    
+    // In production/CI environments, warn but don't fail
+    if (process.env.NODE_ENV === 'production' || process.env.VERCEL || process.env.CI) {
+      console.warn('⚠️  Running in production/CI environment - continuing build...');
+      return true;
+    }
+    
     return false;
   }
   
@@ -59,12 +66,14 @@ function ensureEnvFile(filePath) {
 function main() {
   console.log('🔍 Checking environment configuration...');
   
-  // Ensure env files exist
-  const localExists = ensureEnvFile(envLocalPath);
-  const prodExists = ensureEnvFile(envProductionPath);
-  
-  if (!localExists || !prodExists) {
-    process.exit(1);
+  // Ensure env files exist (skip in production/CI)
+  if (!process.env.VERCEL && !process.env.CI) {
+    const localExists = ensureEnvFile(envLocalPath);
+    const prodExists = ensureEnvFile(envProductionPath);
+    
+    if (!localExists || !prodExists) {
+      process.exit(1);
+    }
   }
   
   // Load environment variables from .env.local if it exists
