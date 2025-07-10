@@ -135,6 +135,9 @@ export default function RegisterPage() {
 
     try {
       const provider = new GoogleAuthProvider();
+      provider.setCustomParameters({
+        prompt: 'select_account'
+      });
       resetPreferences();
       
       const result = await signInWithPopup(auth, provider);
@@ -153,7 +156,20 @@ export default function RegisterPage() {
       router.push("/dashboard");
       router.refresh();
     } catch (error: any) {
-      setError(error.message || "Failed to sign up with Google");
+      console.error('Google sign-up error:', error);
+      let errorMessage = "Failed to sign up with Google";
+      
+      if (error.code === 'auth/popup-closed-by-user') {
+        errorMessage = "Sign-up was cancelled";
+      } else if (error.code === 'auth/popup-blocked') {
+        errorMessage = "Popup was blocked. Please allow popups and try again";
+      } else if (error.code === 'auth/unauthorized-domain') {
+        errorMessage = "This domain is not authorized for Google sign-in";
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+      
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
